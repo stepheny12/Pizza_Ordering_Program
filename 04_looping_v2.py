@@ -12,8 +12,9 @@ def currency(x):
 MAX_PIZZAS = 5
 
 # dictionaries to hold ticket details
-all_pizza = ["Pepperoni", "Hawaiian", "Cheesy Garlic", "MeatLover", "Beef & Onion"]
+all_pizza = ["Pepperoni", "Hawaiian", "Cheesy Garlic", "MeatLover", "Beef & Onion", ]
 all_pizza_costs = [8, 6, 6, 9, 8.5]
+
 
 pizza_program_dict = {
     "Pizza:": all_pizza,
@@ -23,6 +24,7 @@ pizza_program_dict = {
 pizza_program_frame = pandas.DataFrame(pizza_program_dict)
 pizza_program_frame = pizza_program_frame.set_index('Pizza:')
 
+pizza_program_frame['Price'] = pizza_program_frame['Price'].apply(currency)
 
 # loop to sell tickets
 pizzas_sold = 0
@@ -34,12 +36,12 @@ while pizzas_sold < MAX_PIZZAS:
     print(pizza_program_frame)
     print()
     pizza = input("Please enter the pizza you want or 'xxx' to quit: ")
-
-
-    if pizza == 'xxx' :
+    print()
+    if pizza == 'xxx':
         break
 
     pizzas_sold += 1
+
 
 # Output number of pizzas sold
 if pizzas_sold == MAX_PIZZAS:
@@ -47,4 +49,3 @@ if pizzas_sold == MAX_PIZZAS:
 else:
     print("You have sold {} pizza/s. There is {} pizza/s "
           "remaining".format(pizzas_sold, MAX_PIZZAS - pizzas_sold))
-
