@@ -124,8 +124,8 @@ if name == 'xxx':
 
 print("Welcome", name)
 
-pizza_method = delivery_collection("Would you like it to be a delivery or collection from the store?(delivery would "
-                                   "have a surcharge of $5)")
+pizza_method = delivery_collection("Would you like it to be a delivery or collection from the store (delivery would "
+                                   "have a surcharge of $5)?")
 
 print("You chose", pizza_method)
 print()

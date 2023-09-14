@@ -39,8 +39,11 @@ def pizza_choice(question):
         if response == "garlic shrimp deluxe" or response == "gar":
             return "Garlic Shrimp Deluxe"
 
-        if response == "mega meat lover" or response == "gar":
+        if response == "mega meat lover" or response == "meg":
             return "Mega Meat Lover"
+
+        if response == "xxx":
+            return "xxx"
 
         else:
             print("Please choose a valid pizza")
@@ -86,6 +89,7 @@ while pizzas_sold < MAX_PIZZAS:
 # Output number of pizzas sold
 if pizzas_sold == MAX_PIZZAS:
     print("Congratulations you have sold all the pizzas")
+
 else:
     print("You have sold {} pizza/s. There is {} pizza/s "
           "remaining".format(pizzas_sold, MAX_PIZZAS - pizzas_sold))
